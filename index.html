@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Simon Tozer | Rivers of the Dart</title>
+<meta name="description" content="Rivers of the Dart: walks, swims, history and tales, by Simon Tozer, Devon author.">
+<meta property="og:title" content="A homepage for Simon Tozer, made by Sparsh Saini">
+<meta property="og:description" content="A homepage idea for Rivers of the Dart and Simon Tozer's Devon books, made by Sparsh Saini. Not the official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/simontozer/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f1c1e'/><path d='M4 20c4-6 7 4 11-2s7 4 13-2' stroke='%23e9c13a' stroke-width='3' fill='none'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/rivers.jpg">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Colours from the Rivers of the Dart cover: autumn gold in the canopy, leaf green,
+   the black outline of the title, white, and the dark water. */
+:root {
+  --night: #0e1a1c;
+  --moss: #1a2713;
+  --gold: #e9c13a;
+  --leaf: #7d9a22;
+  --water: #2f5f66;
+  --white: #fff;
+  --ink: #0a0f0c;
+  --serif: "Libre Baskerville", "Baskerville", Georgia, serif;
+  --gutter: clamp(1rem, 5vw, 4rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--night); color: var(--white); font-family: var(--serif); font-size: 1rem; line-height: 1.7; overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.wrap { max-width: 70rem; margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; margin: 0; line-height: 1.08; }
+p { margin: 0 0 1rem; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* The cover's title is white capitals with a thick black outline. */
+.outline { color: var(--white); text-shadow: -2px -2px 0 var(--ink), 2px -2px 0 var(--ink), -2px 2px 0 var(--ink), 2px 2px 0 var(--ink), 0 3px 0 var(--ink), 0 0 14px rgba(0,0,0,.55); }
+
+/* Buttons: white with a hard black outline, like the cover's title */
+.btn { display: inline-block; font-family: var(--serif); font-weight: 700; font-size: 1rem; line-height: 1.2; padding: .75rem 1.2rem; background: var(--white); color: var(--ink); text-decoration: none; border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--gold); transition: transform .12s, box-shadow .12s; }
+.btn:hover, .btn:focus-visible { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--gold); }
+.q { font-weight: 700; text-underline-offset: .25em; }
+.buy { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; align-items: center; margin-top: 1.2rem; }
+
+.top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; }
+.made { margin: 0; padding: .45rem var(--gutter); background: #000; color: var(--white); font-size: .78rem; line-height: 1.4; text-align: center; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem var(--gutter); }
+.mark { font-weight: 700; font-size: 1.05rem; text-decoration: none; }
+.bar nav { display: flex; gap: 1.4rem; font-size: .88rem; font-weight: 700; }
+.bar nav a { text-decoration: none; }
+.bar nav a:hover { color: var(--gold); }
+@media (max-width: 640px) { .bar nav a:not(:last-child) { display: none; } }
+
+/* Hero: the waterline rises through the cover. Above it the cover as printed;
+   below it the same cover seen from under the surface. */
+.hero { position: relative; }
+.js .hero { height: 380svh; }
+.stage { position: relative; height: 100svh; min-height: 36rem; overflow: hidden; background: var(--night); display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: clamp(2rem, 6vw, 6rem); padding: 5.6rem var(--gutter) 2rem; }
+.js .stage { position: sticky; top: 0; }
+.back { position: absolute; left: 50%; top: 50%; width: 150vmax; height: 150vmax; margin: -75vmax 0 0 -75vmax; background: url(img/bg.jpg) center / cover; will-change: transform; opacity: .9; }
+.back::after { content: ""; position: absolute; inset: 0; background: radial-gradient(closest-side, transparent 40%, rgba(14,26,28,.9) 100%); }
+.cover { position: relative; z-index: 1; height: min(80svh, 46rem); aspect-ratio: 692 / 1024; overflow: hidden; box-shadow: 0 1.4rem 3rem rgba(0, 0, 0, .7); }
+.cover img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.water { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; will-change: transform; }
+.water img { will-change: transform; transform: scale(1.04); }
+.sheen { position: absolute; left: 0; top: -28px; width: 200%; height: 56px; background: url(img/meniscus.png) 0 0 / 50% 100% repeat-x; will-change: transform; pointer-events: none; }
+.copy { position: relative; z-index: 2; max-width: 33rem; will-change: opacity, transform; }
+.copy h1 { font-size: clamp(2.6rem, 5.4vw, 4.6rem); text-transform: uppercase; }
+.copy h1 small { display: block; text-transform: none; font-size: .36em; line-height: 1.3; margin-top: .9rem; }
+.copy .line { margin-top: 1.2rem; font-size: 1.12rem; font-style: italic; }
+.js .copy { opacity: 0; }
+.dive { position: absolute; z-index: 3; left: 50%; bottom: 6svh; width: min(34rem, calc(100% - 2 * var(--gutter))); transform: translateX(-50%); pointer-events: none; }
+.dive p { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: .8rem 1.1rem; background: rgba(8, 16, 15, .88); border-left: 5px solid var(--gold); font-size: 1rem; line-height: 1.5; opacity: 0; will-change: opacity; }
+.dive p b { display: block; color: var(--gold); font-size: 1.15rem; margin-bottom: .1rem; }
+.dive p:first-child { opacity: 1; }
+@media (min-width: 761px) {
+  .stage { grid-template-columns: auto minmax(0, 34rem); justify-content: center; }
+  .cover { height: min(82svh, 52rem); }
+  .col { position: relative; }
+  .dive { left: 0; right: 0; width: auto; top: 50%; bottom: auto; transform: none; }
+}
+@media (max-width: 760px) {
+  .col { display: contents; }
+  .stage { grid-template-columns: 1fr; align-content: start; justify-items: center; gap: 1.1rem; padding-top: 6rem; }
+  .cover { height: 50svh; }
+  .copy { text-align: center; }
+  .copy h1 { font-size: 2.1rem; }
+  .copy .line { display: none; }
+  .copy .buy { justify-content: center; margin-top: .8rem; }
+  .dive { bottom: 4svh; }
+}
+html:not(.js) .dive { display: none; }
+html:not(.js) .water { transform: none; } html:not(.js) .water img { transform: none; } html:not(.js) .sheen { display: none; }
+
+/* Calm sections */
+.band { padding: clamp(4rem, 9vw, 7rem) 0; }
+h2 { font-size: clamp(2rem, 4.6vw, 3.2rem); margin-bottom: 1rem; }
+.lede { max-width: 40rem; font-size: 1.05rem; }
+.guides { background: var(--moss); }
+.shelf { list-style: none; padding: 0; margin: 2.6rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: 2.4rem 1.6rem; }
+.shelf img { box-shadow: 0 .8rem 1.6rem rgba(0, 0, 0, .55); margin-bottom: .9rem; }
+.shelf h3 { font-size: .98rem; line-height: 1.35; margin-bottom: .3rem; }
+.shelf p { font-size: .88rem; line-height: 1.5; margin: 0 0 .4rem; color: #d9e2cc; }
+.shelf a { font-size: .9rem; }
+.novels { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); gap: 1.6rem; list-style: none; padding: 0; margin: 2rem 0 0; }
+.novels img { margin-bottom: .6rem; }
+.novels h3 { font-size: .86rem; line-height: 1.35; }
+.novels a { font-size: .86rem; }
+
+.talks { background: var(--gold); color: var(--ink); }
+.talks h2 { color: var(--ink); }
+.talks .grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.nights { list-style: none; margin: 0; padding: 0; border-top: 3px solid var(--ink); }
+.nights li { display: grid; grid-template-columns: 5.2rem 1fr; gap: 1rem; align-items: baseline; padding: 1rem 0; border-bottom: 3px solid var(--ink); }
+.nights .d { font-size: 1.9rem; font-weight: 700; line-height: 1; }
+.nights .d small { display: block; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+.nights b { font-size: 1.1rem; display: block; }
+.talks .btn { box-shadow: 4px 4px 0 var(--ink); }
+.talks .btn:hover { box-shadow: 2px 2px 0 var(--ink); }
+.topics { margin: 1.4rem 0 0; padding: 0; list-style: none; font-size: .95rem; }
+.topics li { padding: .25rem 0 .25rem 1.3rem; position: relative; }
+.topics li::before { content: ""; position: absolute; left: 0; top: .85rem; width: .7rem; height: 3px; background: var(--ink); }
+
+.about { background: var(--night); }
+.about .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); }
+.facts { list-style: none; margin: 0; padding: 0; }
+.facts li { padding: .9rem 0; border-top: 1px solid rgba(255, 255, 255, .25); }
+.facts li:last-child { border-bottom: 1px solid rgba(255, 255, 255, .25); }
+.facts b { color: var(--gold); }
+@media (max-width: 760px) { .talks .grid, .about .grid { grid-template-columns: 1fr; } .nights li { grid-template-columns: 4.4rem 1fr; } }
+
+footer { background: #000; padding: 2.5rem 0; font-size: .85rem; }
+footer a { color: var(--gold); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <p class="made">A homepage idea made by Sparsh Saini for Simon Tozer. Not their official site.</p>
+  <div class="bar">
+    <a class="mark outline" href="#">Simon Tozer, Devon Author</a>
+    <nav aria-label="Main"><a href="#books">Books</a><a href="#talks">Talks</a><a href="#about">About</a><a href="https://devonauthor.co.uk/">Shop</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Rivers of the Dart">
+  <div class="stage">
+    <div class="back" aria-hidden="true"></div>
+    <div class="cover">
+      <img class="dry" src="img/rivers.jpg" alt="Cover of Rivers of the Dart: Walks, Swims, History and Tales, by Simon Tozer. A river runs through an autumn wood." width="692" height="1024">
+      <div class="water" aria-hidden="true"><img src="img/rivers-wet.jpg" alt="" width="692" height="1024"></div>
+      <div class="sheen" aria-hidden="true"></div>
+    </div>
+    <div class="col">
+    <div class="copy">
+      <h1 class="outline">Rivers of the Dart<small>Walks, Swims, History &amp; Tales, by Simon Tozer</small></h1>
+      <p class="line">Discover the wild heart of Dartmoor, one river at a time.</p>
+      <div class="buy"><a class="btn" href="https://devonauthor.co.uk/product/rivers-of-the-dart-walks-swims-history-tales/">Rivers of the Dart in Simon's shop</a><a class="q" href="#books">All the books</a></div>
+    </div>
+    <div class="dive" aria-hidden="true">
+      <p><b>The high moor to the sea.</b>A guide that follows the Dart down to Dartmouth.</p>
+      <p><b>Every major tributary.</b>The West Dart, the East Dart, the Blackbrook, the Cowsic, the Webburns and more.</p>
+      <p><b>Walk it, swim it, read it.</b>Each river has a circular walk, a swim spot, its history and a poem.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="band guides" id="books">
+  <div class="wrap">
+    <h2>Swim, Walk &amp; History</h2>
+    <p class="lede">Simon swims in Devon's rivers and sea all year round. These guides send you to the same places: beaches, rivers and the paths between them, with the history and the stories on the way.</p>
+    <ul class="shelf">
+      <li><img src="img/beaches.jpg" alt="Cover of South Devon Beaches: Swim, Walk and History Guide" width="480" height="698" loading="lazy"><h3>South Devon Beaches</h3><p>Swim, Walk &amp; History Guide.</p><a class="q" href="https://devonauthor.co.uk/product/south-devon-beaches-swim-walk-history/">Get it from Simon</a></li>
+      <li><img src="img/central.jpg" alt="Cover of South Hams Central: Swim, Walk and History Guide" width="480" height="698" loading="lazy"><h3>South Hams Central</h3><p>Woodhuish to Prawle Point.</p><a class="q" href="https://devonauthor.co.uk/product/south-hams-central-swim-walk-history/">Get it from Simon</a></li>
+      <li><img src="img/east.jpg" alt="Cover of South Hams East: Swim, Walk and History Guide" width="480" height="698" loading="lazy"><h3>South Hams East</h3><p>East Prawle to Bantham.</p><a class="q" href="https://devonauthor.co.uk/product/south-hams-east-swim-walk-history/">Get it from Simon</a></li>
+      <li><img src="img/whispers.jpg" alt="Cover of Whispers of Devon: Legends, Tales and Storytellers" width="480" height="698" loading="lazy"><h3>Whispers of Devon</h3><p>Legends, tales and storytellers.</p><a class="q" href="https://devonauthor.co.uk/product/whispers-of-devon-legends-tales-and-storytellers/">Get it from Simon</a></li>
+    </ul>
+    <h2 style="margin-top:4.5rem">Novels</h2>
+    <p class="lede">Dartmoor is in the fiction too. Simon's first novel came out in 2019, and the Book of Dumnonia and Gateways of the Fey series have followed.</p>
+    <ul class="novels">
+      <li><img src="img/archway.jpg" alt="Cover of An Archway Through Time" width="480" height="698" loading="lazy"><h3>An Archway Through Time</h3><a class="q" href="https://devonauthor.co.uk/product/an-archway-through-time/">Get it</a></li>
+      <li><img src="img/veils.jpg" alt="Cover of Dartmoor's Veils of Time" width="480" height="698" loading="lazy"><h3>Dartmoor's Veils of Time</h3><a class="q" href="https://devonauthor.co.uk/product/dartmoors-veils-of-time/">Get it</a></li>
+      <li><img src="img/piskie.jpg" alt="Cover of Dartmoor Tales: Christmas in the Piskie Realm" width="480" height="698" loading="lazy"><h3>Dartmoor Tales: Christmas in the Piskie Realm</h3><a class="q" href="https://devonauthor.co.uk/product/dartmoor-tales-christmas-in-the-piskie-realm/">Get it</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band talks" id="talks">
+  <div class="wrap grid">
+    <div>
+      <h2>Come and hear Simon talk</h2>
+      <p>Four evenings this November, Simon is telling Dartmoor Tales, Giants and Hounds. Tickets are from the shop, between &pound;8 and &pound;12.</p>
+      <ul class="topics">
+        <li>Rivers of the Dart, an illustrated talk</li>
+        <li>Wild swimming in South Devon, the South Hams and Dartmoor</li>
+        <li>Blue and Green: nature as medicine</li>
+        <li>Whispers of Devon</li>
+      </ul>
+      <div class="buy"><a class="btn" href="https://devonauthor.co.uk/public-speaking/">Talks and tickets</a></div>
+    </div>
+    <ul class="nights" aria-label="Dartmoor Tales, Giants and Hounds, November dates">
+      <li><span class="d">3<small>Nov</small></span><span><b>Dawlish</b>Dartmoor Tales, Giants &amp; Hounds</span></li>
+      <li><span class="d">10<small>Nov</small></span><span><b>Bovey Tracey</b>Dartmoor Tales, Giants &amp; Hounds</span></li>
+      <li><span class="d">20<small>Nov</small></span><span><b>Countess Wear</b>Dartmoor Tales, Giants &amp; Hounds</span></li>
+      <li><span class="d">23<small>Nov</small></span><span><b>Buckfastleigh</b>Dartmoor Tales, Giants &amp; Hounds</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band about" id="about">
+  <div class="wrap grid">
+    <div>
+      <h2>Simon Tozer</h2>
+      <p>Simon lives in Dawlish with his partner, Kate. He swims all year round, and on the page he writes about the places he swims and walks.</p>
+      <p>He can trace his family in South Devon back to the 1500s.</p>
+      <div class="buy"><a class="btn" href="https://devonauthor.co.uk/simon-tozer/">More about Simon</a><a class="q" href="https://www.instagram.com/devon_author/">Instagram</a></div>
+    </div>
+    <ul class="facts">
+      <li><b>2019</b> His first novel, Briana and the Saxon Warrior.</li>
+      <li><b>2023</b> Christos and the Dartmoor Giants, the second Book of Dumnonia.</li>
+      <li><b>On call</b> He is a firefighter in his local community.</li>
+      <li><b>Tea</b> He also runs an award-winning organic loose leaf tea business.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><p>A mockup made by Sparsh Saini for Simon Tozer. Not affiliated, not live. Covers and details from <a href="https://devonauthor.co.uk">devonauthor.co.uk</a>.</p></div>
+</footer>
+
+<script>
+(() => {
+  const hero = document.querySelector('.hero'), cover = document.querySelector('.cover'), water = document.querySelector('.water'),
+        wet = water.querySelector('img'), sheen = document.querySelector('.sheen'), back = document.querySelector('.back'),
+        copy = document.querySelector('.copy'), caps = [...document.querySelectorAll('.dive p')];
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    hero.style.height = 'auto'; copy.style.opacity = 1; water.style.transform = 'translateY(0)'; wet.style.transform = 'scale(1.04)';
+    sheen.style.display = 'none'; caps.forEach(c => c.style.opacity = 0); return;
+  }
+  let ticking = false;
+  function frame() {
+    ticking = false;
+    const run = hero.offsetHeight - innerHeight, p = Math.min(Math.max(-hero.getBoundingClientRect().top / run, 0), 1);
+    const H = cover.clientHeight, W = cover.clientWidth;
+    // hold on the dry cover, then the waterline rises from the foot of the cover to the top
+    const z = Math.min(Math.max((p - .1) / .7, 0), 1), e = z * z * (3 - 2 * z), T = H * (1 - e);
+    water.style.transform = 'translate3d(0,' + T.toFixed(1) + 'px,0)';
+    const sway = Math.sin(z * 22) * 5 * Math.min(z * 8, 1) * Math.min((1 - z) * 8 + .0, 1);
+    wet.style.transform = 'translate3d(' + sway.toFixed(1) + 'px,' + (-T).toFixed(1) + 'px,0) scale(1.04)';
+    const sx = -((z * W * 2.2) % W);
+    sheen.style.transform = 'translate3d(' + sx.toFixed(1) + 'px,' + T.toFixed(1) + 'px,0)';
+    sheen.style.opacity = z > 0 && z < 1 ? 1 : 0;
+    back.style.transform = 'translate3d(0,' + (-p * 60).toFixed(1) + 'px,0) scale(' + (1 + p * .25).toFixed(3) + ')';
+    const c = p < .3 ? 0 : p < .55 ? 1 : 2;
+    caps.forEach((el, i) => el.style.opacity = i === c && p < .84 ? 1 : 0);
+    const k = Math.min(Math.max((p - .8) / .16, 0), 1);
+    copy.style.opacity = k.toFixed(3); copy.style.transform = 'translate3d(0,' + ((1 - k) * 20).toFixed(1) + 'px,0)';
+  }
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+  addEventListener('resize', frame); frame();
+})();
+</script>
+</body>
+</html>
